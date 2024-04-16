@@ -193,7 +193,7 @@ async fn completions(
     }))
 }
 
-fn build_triton_request(request: CompletionCreateParams) -> anyhow::Result<ModelInferRequest> {
+pub fn build_triton_request(request: CompletionCreateParams) -> anyhow::Result<ModelInferRequest> {
     let mut builder = Builder::new()
         .model_name(request.model)
         .input(
