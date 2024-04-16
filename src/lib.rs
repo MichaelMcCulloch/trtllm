@@ -7,4 +7,4 @@ pub mod state;
 pub mod telemetry;
 mod utils;
 
-mod triton;
+pub mod triton;
