@@ -1,5 +1,5 @@
 [package]
-name = "openai_trtllm"
+name = "trtllm"
 version = "0.2.1"
 edition = "2021"
 
@@ -18,12 +18,20 @@ serde_json = "1.0.108"
 bytes = "1.5.0"
 uuid = { version = "1.6.1", features = ["v4"] }
 tracing = { version = "0.1", features = ["log"] }
-tracing-subscriber = { version = "0.3", features = ["registry", "env-filter", "json"] }
+tracing-subscriber = { version = "0.3", features = [
+    "registry",
+    "env-filter",
+    "json",
+] }
 tracing-opentelemetry = { version = "0.22" }
 tower-http = { version = "0.5", features = ["trace"] }
 opentelemetry = { version = "0.21.0", features = ["metrics", "logs"] }
 opentelemetry_sdk = { version = "0.21.1", features = ["rt-tokio", "logs"] }
-opentelemetry-otlp = { version = "0.14.0", features = ["tonic", "metrics", "logs"] }
+opentelemetry-otlp = { version = "0.14.0", features = [
+    "tonic",
+    "metrics",
+    "logs",
+] }
 opentelemetry-semantic-conventions = { version = "0.13.0" }
 axum-tracing-opentelemetry = "0.16.0"
 liquid = "0.26.4"

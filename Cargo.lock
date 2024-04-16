@@ -1065,37 +1065,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
 
 [[package]]
-name = "openai_trtllm"
-version = "0.2.1"
-dependencies = [
- "anyhow",
- "async-stream",
- "axum 0.7.4",
- "axum-tracing-opentelemetry",
- "bytes",
- "clap",
- "figment",
- "liquid",
- "opentelemetry",
- "opentelemetry-otlp",
- "opentelemetry-semantic-conventions",
- "opentelemetry_sdk",
- "prost 0.12.1",
- "prost-types",
- "serde",
- "serde_json",
- "tokio",
- "tonic 0.10.2",
- "tonic-build",
- "tower-http",
- "tracing",
- "tracing-opentelemetry",
- "tracing-subscriber",
- "uuid",
- "walkdir",
-]
-
-[[package]]
 name = "opentelemetry"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2114,6 +2083,37 @@ dependencies = [
  "tracing-core",
  "tracing-log 0.1.4",
  "tracing-serde",
+]
+
+[[package]]
+name = "trtllm"
+version = "0.2.1"
+dependencies = [
+ "anyhow",
+ "async-stream",
+ "axum 0.7.4",
+ "axum-tracing-opentelemetry",
+ "bytes",
+ "clap",
+ "figment",
+ "liquid",
+ "opentelemetry",
+ "opentelemetry-otlp",
+ "opentelemetry-semantic-conventions",
+ "opentelemetry_sdk",
+ "prost 0.12.1",
+ "prost-types",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tonic 0.10.2",
+ "tonic-build",
+ "tower-http",
+ "tracing",
+ "tracing-opentelemetry",
+ "tracing-subscriber",
+ "uuid",
+ "walkdir",
 ]
 
 [[package]]
