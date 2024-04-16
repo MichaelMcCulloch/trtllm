@@ -28,7 +28,7 @@ use crate::triton::ModelInferRequest;
 use crate::utils::deserialize_bytes_tensor;
 
 #[instrument(name = "chat_completions", skip(grpc_client, history_builder, request))]
-pub(crate) async fn compat_chat_completions(
+pub async fn compat_chat_completions(
     headers: HeaderMap,
     State(AppState {
         grpc_client,
@@ -284,7 +284,7 @@ fn build_triton_request(
 
 #[allow(dead_code)]
 #[derive(Deserialize, Debug)]
-pub(crate) struct ChatCompletionCreateParams {
+pub struct ChatCompletionCreateParams {
     /// A list of messages comprising the conversation so far.
     messages: Vec<ChatCompletionMessageParams>,
     /// ID of the model to use.

@@ -4,20 +4,20 @@ use crate::triton::model_infer_request::{InferInputTensor, InferRequestedOutputT
 
 use super::{InferTensorContents, ModelInferRequest};
 
-pub(crate) struct Builder {
+pub struct Builder {
     inner: anyhow::Result<ModelInferRequest>,
 }
 
 impl Builder {
-    pub(crate) fn new() -> Self {
+    pub fn new() -> Self {
         Self::default()
     }
 
-    pub(crate) fn build(self) -> anyhow::Result<ModelInferRequest> {
+    pub fn build(self) -> anyhow::Result<ModelInferRequest> {
         self.inner
     }
 
-    pub(crate) fn model_name<S>(self, model_name: S) -> Self
+    pub fn model_name<S>(self, model_name: S) -> Self
     where
         S: Into<String>,
     {
@@ -47,7 +47,7 @@ impl Builder {
         })
     }
 
-    pub(crate) fn input<S, V>(self, name: S, shape: V, data: InferTensorData) -> Self
+    pub fn input<S, V>(self, name: S, shape: V, data: InferTensorData) -> Self
     where
         S: Into<String>,
         V: Into<Vec<i64>>,
@@ -64,7 +64,7 @@ impl Builder {
         })
     }
 
-    pub(crate) fn output<S>(self, name: S) -> Self
+    pub fn output<S>(self, name: S) -> Self
     where
         S: Into<String>,
     {
@@ -95,7 +95,7 @@ impl Default for Builder {
     }
 }
 
-pub(crate) enum InferTensorData {
+pub enum InferTensorData {
     Bool(Vec<bool>),
     Int32(Vec<i32>),
     Int64(Vec<i64>),

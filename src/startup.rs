@@ -14,7 +14,6 @@ pub async fn run_server(config: Config) -> anyhow::Result<()> {
     let grpc_client = GrpcInferenceServiceClient::connect(config.triton_endpoint)
         .await
         .context("failed to connect triton endpoint")?;
-
     let history_builder =
         HistoryBuilder::new(&config.history_template, &config.history_template_file)?;
     let state = AppState {

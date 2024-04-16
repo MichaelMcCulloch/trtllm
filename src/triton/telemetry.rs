@@ -18,7 +18,7 @@ impl<'a> Injector for MetadataMap<'a> {
     }
 }
 
-pub(crate) fn propagate_context<T>(request: &mut Request<T>, header: &HeaderMap) {
+pub fn propagate_context<T>(request: &mut Request<T>, header: &HeaderMap) {
     let mut metadata_map = MetadataMap(request.metadata_mut());
 
     // Propagate the current opentelemetry context

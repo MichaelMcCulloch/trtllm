@@ -1,7 +1,7 @@
-pub(crate) use chat::compat_chat_completions;
-pub(crate) use completions::compat_completions;
-pub(crate) use health_check::health_check;
+pub use chat::compat_chat_completions;
+pub use completions::compat_completions;
+pub use health_check::health_check;
 
-pub(crate) mod chat;
-mod completions;
-mod health_check;
+pub mod chat;
+pub mod completions;
+pub mod health_check;

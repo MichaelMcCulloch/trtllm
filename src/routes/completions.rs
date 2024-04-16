@@ -27,7 +27,7 @@ use crate::triton::ModelInferRequest;
 use crate::utils::{deserialize_bytes_tensor, string_or_seq_string};
 
 #[instrument(name = "completions", skip(grpc_client, request))]
-pub(crate) async fn compat_completions(
+pub async fn compat_completions(
     headers: HeaderMap,
     State(AppState { grpc_client, .. }): State<AppState>,
     request: Json<CompletionCreateParams>,

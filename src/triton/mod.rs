@@ -1,4 +1,4 @@
 tonic::include_proto!("inference");
 
-pub(crate) mod request;
-pub(crate) mod telemetry;
+pub mod request;
+pub mod telemetry;
