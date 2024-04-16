@@ -324,7 +324,7 @@ pub struct CompletionCreateParams {
 }
 
 #[derive(Serialize, Debug)]
-struct Completion {
+pub struct Completion {
     /// A unique identifier for the completion.
     id: String,
     /// The object type, which is always "text_completion"
@@ -340,7 +340,7 @@ struct Completion {
 }
 
 #[derive(Serialize, Debug)]
-struct CompletionChoice {
+pub struct CompletionChoice {
     text: String,
     index: usize,
     logprobs: Option<()>,
@@ -350,7 +350,7 @@ struct CompletionChoice {
 #[allow(dead_code)]
 #[derive(Serialize, Debug)]
 #[serde(rename_all = "snake_case")]
-enum FinishReason {
+pub enum FinishReason {
     /// The model hit a natural stop point or a provided stop sequence.
     Stop,
     /// The maximum number of tokens specified in the request was reached.
@@ -360,7 +360,7 @@ enum FinishReason {
 }
 
 #[derive(Serialize, Debug, Default)]
-struct Usage {
+pub struct Usage {
     /// Number of tokens in the prompt.
     pub prompt_tokens: usize,
     /// Number of tokens in the generated completion.
