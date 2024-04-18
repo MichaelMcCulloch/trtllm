@@ -2,7 +2,10 @@
 
 use crate::triton::model_infer_request::{InferInputTensor, InferRequestedOutputTensor};
 
-use super::{InferTensorContents, ModelInferRequest};
+use super::{
+    grpc_inference_service_client::GrpcInferenceServiceClient, InferTensorContents,
+    ModelInferRequest,
+};
 
 pub struct Builder {
     inner: anyhow::Result<ModelInferRequest>,
